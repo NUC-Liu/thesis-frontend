@@ -140,6 +140,7 @@
                             align-center
                             justify-center
                     >
+
                         <router-view/>
                     </v-layout>
                 </v-container>
@@ -241,8 +242,8 @@
             drawer: null,
             menuMap: {},
             items: [
-                { icon: 'home', text: '首页', path: '/home' },
-                { icon: 'announcement', text: '公告通知', path: 'announcement' },
+                { icon: 'home', text: '首页', path: '/stuhome' },
+                { icon: 'announcement', text: '公告通知', path: '/announcement' },
                 {
                     icon: 'library_books',
                     //'icon-alt': 'library_books',
@@ -259,6 +260,7 @@
                 { icon: 'help', text: '帮助', path: 'help' },
             ],
         }),
+
     }
 </script>
 
