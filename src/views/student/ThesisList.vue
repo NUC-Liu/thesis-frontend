@@ -1,23 +1,33 @@
 <template>
     <div id="app">
+        <v-tabs>
+            <v-tab>论文选题列表</v-tab>
+        </v-tabs>
         <v-app id="inspire">
             <v-card>
                 <v-card-title>
-                    Nutrition
+                    <v-btn large color="primary">确认选择</v-btn>
                     <v-spacer></v-spacer>
                     <v-text-field
                             v-model="search"
-                            append-icon="mdi-magnify"
+                            append-icon="search"
                             label="Search"
                             single-line
                             hide-details
                     ></v-text-field>
                 </v-card-title>
                 <v-data-table
+                        v-model="selected"
                         :headers="headers"
-                        :items="desserts"
+                        :items="theses"
+                        :single-select="true"
                         :search="search"
-                ></v-data-table>
+                        item-key="thesis_no"
+                        show-select
+                        class="elevation-1"
+                        loading
+                >
+                </v-data-table>
             </v-card>
         </v-app>
     </div>
@@ -30,42 +40,21 @@
             return {
                 search: '',
                 headers: [
-                    {
-                        text: 'Dessert (100g serving)',
-                        align: 'start',
-                        sortable: false,
-                        value: 'name',
-                    },
-                    { text: 'Calories', value: 'calories' },
-                    { text: 'Fat (g)', value: 'fat' },
-                    { text: 'Carbs (g)', value: 'carbs' },
-                    { text: 'Protein (g)', value: 'protein' },
-                    { text: 'Iron (%)', value: 'iron' },
+                    { text: '编号', value: 'thesis_no',sortable: true },
+                    { text: '论文标题', value: 'thesis_title' },
                 ],
-                desserts: [
+                theses: [
                     {
-                        name: 'Frozen Yogurt',
-                        calories: 159,
-                        fat: 6.0,
-                        carbs: 24,
-                        protein: 4.0,
-                        iron: '1%',
+                        thesis_no: '002',
+                        thesis_title: "002毕业设计管理系统"
                     },
                     {
-                        name: 'Ice cream sandwich',
-                        calories: 237,
-                        fat: 9.0,
-                        carbs: 37,
-                        protein: 4.3,
-                        iron: '1%',
+                        thesis_no: '001',
+                        thesis_title: "001毕业设计管理系统"
                     },
                     {
-                        name: 'Eclair',
-                        calories: 262,
-                        fat: 16.0,
-                        carbs: 23,
-                        protein: 6.0,
-                        iron: '7%',
+                        thesis_no: '005',
+                        thesis_title: "005毕业设计管理系统"
                     },
                 ],
             }

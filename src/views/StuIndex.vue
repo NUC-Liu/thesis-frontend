@@ -132,103 +132,11 @@
             </v-app-bar>
             <!--内容区-->
             <v-content>
-                <v-container
-                        fluid
-                        fill-height
-                >
-                    <v-layout
-                            align-center
-                            justify-center
-                    >
-
-                        <router-view/>
-                    </v-layout>
-                </v-container>
+                <div>
+                    <router-view/>
+                </div>
             </v-content>
 
-            <v-dialog
-                    v-model="dialog"
-                    width="800px"
-            >
-                <v-card>
-                    <v-card-title class="grey darken-2">
-                        Create contact
-                    </v-card-title>
-                    <v-container grid-list-sm>
-                        <v-layout
-                                row
-                                wrap
-                        >
-                            <v-flex
-                                    xs12
-                                    align-center
-                                    justify-space-between
-                            >
-                                <v-layout align-center>
-                                    <v-avatar
-                                            size="40px"
-                                            class="mr-3"
-                                    >
-                                        <img
-                                                src="//ssl.gstatic.com/s2/oz/images/sge/grey_silhouette.png"
-                                                alt=""
-                                        >
-                                    </v-avatar>
-                                    <v-text-field
-                                            placeholder="Name"
-                                    ></v-text-field>
-                                </v-layout>
-                            </v-flex>
-                            <v-flex xs6>
-                                <v-text-field
-                                        prepend-icon="business"
-                                        placeholder="Company"
-                                ></v-text-field>
-                            </v-flex>
-                            <v-flex xs6>
-                                <v-text-field
-                                        placeholder="Job title"
-                                ></v-text-field>
-                            </v-flex>
-                            <v-flex xs12>
-                                <v-text-field
-                                        prepend-icon="mail"
-                                        placeholder="Email"
-                                ></v-text-field>
-                            </v-flex>
-                            <v-flex xs12>
-                                <v-text-field
-                                        type="tel"
-                                        prepend-icon="phone"
-                                        placeholder="(000) 000 - 0000"
-                                ></v-text-field>
-                            </v-flex>
-                            <v-flex xs12>
-                                <v-text-field
-                                        prepend-icon="notes"
-                                        placeholder="Notes"
-                                ></v-text-field>
-                            </v-flex>
-                        </v-layout>
-                    </v-container>
-                    <v-card-actions>
-                        <v-btn
-                                text
-                                color="primary"
-                        >More</v-btn>
-                        <v-spacer></v-spacer>
-                        <v-btn
-                                text
-                                color="primary"
-                                @click="dialog = false"
-                        >Cancel</v-btn>
-                        <v-btn
-                                text
-                                @click="dialog = false"
-                        >Save</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-dialog>
         </v-app>
     </div>
 </template>
@@ -249,7 +157,7 @@
                     //'icon-alt': 'library_books',
                     text: '论文管理',
                     model: false,
-                    path: 'thesis',
+                    path: '/thesis',
                     children: [
                         { icon: 'list', text: '论文列表', path: '/list' },
                         { icon: 'playlist_add_check', text: '已选论文', path: '/selected' },

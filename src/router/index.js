@@ -35,6 +35,16 @@ const routes = [
         name: 'ThesisList',
         component: () => import('../views/student/ThesisList')
       },
+      {
+        path: '/thesis/selected',
+        name: 'SelectedThesis',
+        component: () => import('../views/student/Selected')
+      },
+      {
+        path: '/thesis/weekly',
+        name: 'Weekly',
+        component: () => import('../views/student/Weekly')
+      },
     ]
   },
 ]
